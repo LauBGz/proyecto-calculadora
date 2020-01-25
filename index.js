@@ -190,4 +190,4 @@ document.querySelector('#resultado').addEventListener('click', function () {
   }
   document.getElementById("input").value = resultado;
   numeroCalculadora = "";
-});s
+});
