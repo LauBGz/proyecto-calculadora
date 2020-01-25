@@ -1,6 +1,12 @@
+let numero1;
+let numero2;
+let operacion;
+let resultado;
+let tecla;
+let numeroCalculadora = "";
+
 // Creando función de suma
 function sumar(n1, n2) {
-<<<<<<< HEAD
     let result = n1 + n2;
     return result; // Momentaniamente devuelve la suma de los dos numeros. 
 }
@@ -54,59 +60,6 @@ function raizCuadrada(numero) {
     let result = Math.sqrt(numero);
     return result;
 }
-
-=======
-  let result = n1 + n2;
-  return result; // Momentaniamente devuelve la suma de los dos numeros. 
-}
-// Función de resta:
-function restar(n1, n2) {
-  let result = n1 - n2;
-  return result; // Momentaniamente devuelve la restade los dos numeros.
-}
-// Función que multiplica
-function multplicar(n1, n2) {
-  let result = n1 * n2;
-  return result; // Momentaniamente devuelve la multiplicación de los dos numeros.
-}
-// Función divir
-function dividir(n1, n2) {
-  let result = n1 / n2;
-  return result; // Momentaniamente devuelve la divici de los dos numeros.
-}
-// Funcion que calucla el porcentaje de un numero s
-function porcentaje(n1, n2) {
-  let result = n1 * n2 / 100;
-  return result; // Momentaniamente devuelve el porcentaje de los dos numeros.
-}
-//Función potencia
-function potencia(numero) {
-  let result = Math.pow(numero, 2);
-  return result;
-}
-//Función de dolar a euro
-function conversionDolaraEuro(dolar) {
-  let result = 0.91 * dolar;
-  return result;
-}
-//Función de euro a dolar
-function conversionEuroaDolar(euro) {
-  let result = 1.10 * euro;
-  return result;
-}
-//Función de raiz cuadrada
-function raizCuadrada(numero) {
-  let result = Math.sqrt(numero);
-  return result;
-}
->>>>>>> 38f3cd93e8cab10c259aee3ebe180b1fd9a1b846
-let numero1;
-let numero2;
-let operacion;
-let resultado;
-let tecla;
-let numeroCalculadora = "";
-<<<<<<< HEAD
 
 //Función para recoger todas las cifras del número insertado
 function recogerNumero(numTecla){
@@ -246,6 +199,7 @@ document.querySelector('#raiz').addEventListener('click', function () {
 //Función que borra el número 
 document.querySelector('#borrar').addEventListener('click', function () {
     document.getElementById("input").value = "";
+    numeroCalculadora = "";
 });
 
 //Función que llama a las operaciones con 2 números
@@ -272,6 +226,7 @@ document.querySelector('#resultado').addEventListener('click', function () {
     document.getElementById("input").value = resultado;
     numeroCalculadora = "";
 });
+<<<<<<< HEAD
 =======
 //Función para recoger todas las cifras del número insertado
 function recogerNumero(numTecla){
@@ -420,3 +375,5 @@ document.querySelector('#resultado').addEventListener('click', function () {
 });
 >>>>>>> 38f3cd93e8cab10c259aee3ebe180b1fd9a1b846
 >>>>>>> f905690d0cf880a8e3b35964bbafadd299568b99
+=======
+>>>>>>> 21416e6d338449d51868ac1c6c3b2e0a752b8b40
