@@ -51,7 +51,7 @@ let tecla;
 let numeroCalculadora = "";
 //Función para recoger todas las cifras del número insertado
 function recogerNumero(numTecla){
-  numeroCalculadora = numeroCalculadora + numTecla;
+  numeroCalculadora +=  numTecla;
   document.getElementById("input").value = numeroCalculadora;
 }
 //Función para insertar número 1
