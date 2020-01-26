@@ -1,9 +1,11 @@
+  
 let numero1;
 let numero2;
 let operacion;
 let resultado;
 let tecla;
 let numeroCalculadora = "";
+let maxMin;
 
 // Creando función de suma
 function sumar(n1, n2) {
@@ -62,6 +64,17 @@ function raizCuadrada(numero) {
     let result = Math.sqrt(numero);
     return result;
 }
+
+// Funciones que piden un numero maximo y un minimo y te devuelven otro al azar: 
+function Random(max, min) {
+  return Math.floor(Math.random() * (max + 1 - min)) + min;
+}
+
+function ramdData() {
+  let a = parseInt(prompt('Introduzca un maximo'))
+  let b = parseInt(prompt('Introduzca un minimo'))
+  return maxMin = (Random(a, b))
+}   
 
 //Función para recoger todas las cifras del número insertado
 function recogerNumero(numTecla){
@@ -134,6 +147,8 @@ document.querySelector('#decimal').addEventListener('click', function () {
     tecla = document.getElementById("decimal").value;
     recogerNumero(tecla);
 });
+
+
 
 //Función para imprimir el número en la pantalla de la calculadora
 function escribirNumero(){
@@ -214,6 +229,13 @@ document.querySelector('#borrar').addEventListener('click', function () {
     document.getElementById("input").value = "";
     numeroCalculadora = "";
 });
+
+//Función que devuelve un numero randomico 
+document.querySelector('#Rand').addEventListener('click', function () {
+    ramdData();
+    document.getElementById("input").value = maxMin;
+    numeroCalculadora = "";
+  });
 
 //Función que llama a las operaciones con 2 números
 document.querySelector('#resultado').addEventListener('click', function () {
