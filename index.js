@@ -18,7 +18,7 @@ function restar(n1, n2) {
 }
 
 // Función que multiplica
-function multplicar(n1, n2) {
+function multiplicar(n1, n2) {
     let result = n1 * n2;
     return result; // Momentaniamente devuelve la multiplicación de los dos numeros.
 }
@@ -127,9 +127,15 @@ document.querySelector('#cero').addEventListener('click', function () {
     recogerNumero(tecla);
 });
 
+//Función para insertar número 0
+document.querySelector('#decimal').addEventListener('click', function () {
+    tecla = document.getElementById("decimal").value;
+    recogerNumero(tecla);
+});
+
 //Función para imprimir el número en la pantalla de la calculadora
 function escribirNumero(){
-    numero1 = parseInt(document.getElementById("input").value);
+    numero1 = parseFloat(document.getElementById("input").value);
     document.getElementById("input").value = "";
     numeroCalculadora = "";
 }
@@ -138,35 +144,40 @@ function escribirNumero(){
 document.querySelector('#sumar').addEventListener('click', function () {
     operacion = '+';
     escribirNumero();
+    document.getElementById("input").value = operacion;
 });
 
 //Función para al hacer clic en sumar que guarde el valor '-'
 document.querySelector('#restar').addEventListener('click', function () {
     operacion = '-';
     escribirNumero();
+    document.getElementById("input").value = operacion;
 });
 
 //Función para al hacer clic en sumar que guarde el valor '*'
 document.querySelector('#multiplicar').addEventListener('click', function () {
     operacion = '*';
     escribirNumero();
+    document.getElementById("input").value = "x";
 });
 
 //Función para al hacer clic en sumar que guarde el valor '/'
 document.querySelector('#dividir').addEventListener('click', function () {
     operacion = '/';
     escribirNumero();
+    document.getElementById("input").value = "÷";
 });
 
 //Función para al hacer clic en sumar que guarde el valor '%'
 document.querySelector('#porcentaje').addEventListener('click', function () {
     operacion = '%';
     escribirNumero();
+    document.getElementById("input").value = operacion;
 });
 
 //Función que al hacer clic obtiene la potencia
 document.querySelector('#potencia').addEventListener('click', function () {
-    numero1 = parseInt(document.getElementById("input").value);
+    numero1 = parseFloat(document.getElementById("input").value);
     resultado = potencia(numero1);
     document.getElementById("input").value = resultado;
     numeroCalculadora = "";
@@ -174,23 +185,23 @@ document.querySelector('#potencia').addEventListener('click', function () {
 
 //Función que al hacer clic convierte euros a dólares
 document.querySelector('#dolar').addEventListener('click', function () {
-    numero1 = parseInt(document.getElementById("input").value);
+    numero1 = parseFloat(document.getElementById("input").value);
     resultado = conversionEuroaDolar(numero1);
-    document.getElementById("input").value = resultado;
+    document.getElementById("input").value = resultado+"$";
     numeroCalculadora = "";
 });
 
 //Función que al hacer clic convierte dólares a euros
 document.querySelector('#euro').addEventListener('click', function () {
-    numero1 = parseInt(document.getElementById("input").value);
+    numero1 = parseFloat(document.getElementById("input").value);
     resultado = conversionDolaraEuro(numero1);
-    document.getElementById("input").value = resultado;
+    document.getElementById("input").value = resultado+"€";
     numeroCalculadora = "";
 });
 
 //Función que al hacer obtiene la raíz cuadrada
 document.querySelector('#raiz').addEventListener('click', function () {
-    numero1 = parseInt(document.getElementById("input").value);
+    numero1 = parseFloat(document.getElementById("input").value);
     resultado = raizCuadrada(numero1);
     document.getElementById("input").value = resultado;
     numeroCalculadora = "";
@@ -205,7 +216,7 @@ document.querySelector('#borrar').addEventListener('click', function () {
 //Función que llama a las operaciones con 2 números
 document.querySelector('#resultado').addEventListener('click', function () {
     resultado;
-    numero2 = parseInt(document.getElementById("input").value);
+    numero2 = parseFloat(document.getElementById("input").value);
     switch (operacion) {
         case '+':
             resultado = sumar(numero1, numero2)
@@ -214,7 +225,7 @@ document.querySelector('#resultado').addEventListener('click', function () {
             resultado = restar(numero1, numero2)
             break
         case '*':
-            resultado = multplicar(numero1, numero2)
+            resultado = multiplicar(numero1, numero2)
             break
         case '/':
             resultado = dividir(numero1, numero2)
@@ -222,6 +233,7 @@ document.querySelector('#resultado').addEventListener('click', function () {
         case '%':
             resultado = porcentaje(numero1, numero2)
             break
+        default: resultado="Error"
     }
     document.getElementById("input").value = resultado;
     numeroCalculadora = "";
