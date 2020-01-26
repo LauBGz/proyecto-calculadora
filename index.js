@@ -44,14 +44,16 @@ function potencia(numero) {
 
 //Función de dolar a euro
 function conversionDolaraEuro(dolar) {
-    let result = 0.91 * dolar;
+    let cambioAEuro = 0.91 * dolar;
+    let result = Math.round(cambioAEuro * 100) / 100;
     return result;
 }
 
 
 //Función de euro a dolar
 function conversionEuroaDolar(euro) {
-    let result = 1.10 * euro;
+    let cambioADolar = 1.10 * euro;
+    let result = Math.round(cambioADolar * 100) / 100;
     return result;
 }
 
