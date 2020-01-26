@@ -233,7 +233,7 @@ document.querySelector('#resultado').addEventListener('click', function () {
         case '%':
             resultado = porcentaje(numero1, numero2)
             break
-        default: resultado="Error"
+        default: resultado="Error";
     }
     document.getElementById("input").value = resultado;
     numeroCalculadora = "";
